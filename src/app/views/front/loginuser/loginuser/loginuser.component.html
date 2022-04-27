@@ -1,0 +1,115 @@
+<div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
+  <div class="wrapper wrapper--w680">
+      <div class="card card-4">
+          <div class="card-body">
+              <h2 class="title">Welcome back !</h2>
+              <form #f="ngForm" (ngSubmit)="loginuser(f)">
+
+                  <div class="row row-space">
+                      
+                          <div class="input-group">
+                              <label class="label">Username</label>
+                              <input class="input--style-4" type="text" name="username"
+                              #username="ngModel" ngModel>
+                          </div>
+                  </div>
+
+                  <div class="row row-space"> 
+                      <div class="input-group">
+                          <label class="label">Password</label>
+                          <input class="input--style-4" type="password"placeholder="Enter your password"
+                          id="password"
+                          required
+                          minlength="6"
+                          name="password"
+                          #password="ngModel" ngModel />
+                      </div>
+                      <div class="alert alert-danger" *ngIf="password.errors?.['required'] && password.touched">
+                          Password is required
+                      </div>
+                     
+                     <div class="alert alert-danger" *ngIf="messageErr" >
+                         {{messageErr}}
+                      </div>
+
+                  </div>
+                  
+                  <div class="p-t-15">
+                      <button [disabled]="f.invalid" class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a routerLink="/register" class="text-primary ml-1">register</a></p>
+</div>
+
+
+
+
+
+
+
+<!-- 
+<br>
+<br>
+<br>
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+            <div class="d-table-cell align-middle">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="m-sm-4">
+                            <div class="text-center">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Andrew Jones" class="img-fluid rounded-circle" width="132" height="132">
+                            </div>
+                            <form #f="ngForm" (ngSubmit)="loginuser(f)">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input class="form-control form-control-lg" type="email" 
+                                    placeholder="Enter your email"
+                                    id="email"
+                                    required
+                                    name="email"
+                                    #email="ngModel" ngModel
+                                  />
+                                  <div class="alert alert-danger" *ngIf="email.errors?.['required'] && email.touched">
+                                    Email is required
+                                  </div>
+                                  <div *ngIf="email.errors?.['email']">
+                                    Email must be a valid email address
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <input class="form-control form-control-lg" type="password"
+                                     placeholder="Enter your password"
+                                     id="password"
+                                     required
+                                     minlength="6"
+                                     name="password"
+                                     #password="ngModel" ngModel
+                                   />
+                                   <div class="alert alert-danger" *ngIf="password.errors?.['required'] && password.touched">
+                                     Password is required
+                                   </div>
+                                   <div *ngIf="password.errors?.['minlength']">
+                                    Password must be at least 6 characters
+                                  </div>
+                                </div>
+                                <div class="alert alert-danger" *ngIf="messageErr" >
+                                    {{messageErr}}
+                                  </div>
+                                <button [disabled]="f.invalid" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+            
+        </div>
+    </div>
+    <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a routerLink="/register" class="text-primary ml-1">register</a></p>
+</div> -->
